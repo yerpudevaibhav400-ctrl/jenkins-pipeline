@@ -1,0 +1,19 @@
+terraform {
+  required_providers {
+    aws = {
+      version = ">= 2.7.0"
+      source  = "hashicorp/aws"
+    }
+  }
+}
+
+provider "aws" {
+  region     = "ap-south-1"
+}
+resource "aws_vpc" "main" {
+  cidr_block       = "10.0.0.0/16"
+
+  tags = {
+    Name = "main"
+  }
+}
