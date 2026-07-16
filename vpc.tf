@@ -17,3 +17,7 @@ resource "aws_vpc" "main" {
     Name = "main"
   }
 }
+resource "aws_eip" "lb" {
+  domain   = "vpc"
+}
+
